@@ -4,11 +4,16 @@ import Search from '../screens/Search'
 import YourLibrary from '../screens/YourLibrary'
 import Premium from '../screens/Premium'
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import BarraMusica from './BarraMusica/BarraMusica';
+import { Fragment } from 'react';
+import { View } from 'react-native';
 
 export default function  TabsTeste() {
 const Tab = createBottomTabNavigator();
 
     return (
+         <View style={{flex:1}}>
+
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarStyle: {
@@ -43,10 +48,13 @@ const Tab = createBottomTabNavigator();
         })}
         tabBarStyle={{ borderTopWidth: 0 }} 
       >
+        
         <Tab.Screen name="Home" component={StackTeste} options={{ headerShown: false }} />
         <Tab.Screen name="Search" component={Search} options={{ headerShown: false }} />
         <Tab.Screen name="YourLibrary" component={YourLibrary} options={{ headerShown: false }} />
         <Tab.Screen name="Premium" component={Premium} options={{ headerShown: false }} />
       </Tab.Navigator>
+
+      </View> 
     )
   }
